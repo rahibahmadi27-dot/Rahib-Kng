@@ -1,16 +1,19 @@
-import connectToWhatsapp from './Digix/crew.js'
+import connectToWhatsapp from './Rahib AMD'
 import handleIncomingMessage from './events/messageHandler.js'
 
-(async() => {
+(async () => {
     await connectToWhatsapp(handleIncomingMessage)
-        console.log('established !')
-})()const express = require("express")
-const app = express()
+    console.log('established !')
+})();
 
-app.get("/", (req,res)=>{
-  res.send("Rahib WhatsApp Bot is Running")
-})
+// --- Express server برای نگه داشتن ربات آنلاین ---
+import express from "express";
+const app = express();
 
-app.listen(process.env.PORT || 3000, ()=>{
-  console.log("Server running")
-})
+app.get("/", (req, res) => {
+    res.send("Rahib WhatsApp Bot is Running");
+});
+
+app.listen(process.env.PORT || 3000, () => {
+    console.log("Server running");
+});
