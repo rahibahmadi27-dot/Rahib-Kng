@@ -4,4 +4,13 @@ import handleIncomingMessage from './events/messageHandler.js'
 (async() => {
     await connectToWhatsapp(handleIncomingMessage)
         console.log('established !')
-})()
+})()const express = require("express")
+const app = express()
+
+app.get("/", (req,res)=>{
+  res.send("Rahib WhatsApp Bot is Running")
+})
+
+app.listen(process.env.PORT || 3000, ()=>{
+  console.log("Server running")
+})
